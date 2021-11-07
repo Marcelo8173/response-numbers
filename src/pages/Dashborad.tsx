@@ -25,7 +25,9 @@ const Dashboard = () => {
   const handleSubmit = async () => {
     try {
       const response = await api.get("ali/decompose", {
-        params: calculate,
+        params: {
+            number: calculate
+        },
       });
       setNumbers(response.data);
     } catch (error) {
