@@ -17,6 +17,10 @@ const Dashboard = () => {
   });
   const [calculate, setCalculate] = React.useState<number>();
 
+  React.useEffect(() => {
+
+  },[])
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.currentTarget.value;
     setCalculate(Number(newValue));
@@ -24,7 +28,7 @@ const Dashboard = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await api.get("ali/decompose", {
+      const response = await api.get("api/decompose", {
         params: {
             number: calculate
         },
